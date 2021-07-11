@@ -9,7 +9,7 @@
 /// let expected = "3 10 5 16 8 4 2 1";
 /// assert_eq!(result, expected);
 /// ```
-pub fn weird_algorithm(start: usize) -> String {
+pub fn weird_algorithm(start: u64) -> String {
     if start == 0 {
         panic!("Expected positive integer.")
     }
@@ -68,4 +68,16 @@ mod tests {
     fn bench_start_10e6(b: &mut Bencher) {
         b.iter(|| weird_algorithm(1_000_000));
     }
+}
+
+// Hack: include a `main` function in the file. This way this file is possible to return as a standalone solution.
+#[allow(dead_code)]
+fn main() {
+    use std::io::{BufRead, BufReader};
+
+    let mut input = BufReader::new(std::io::stdin());
+    let mut line = "".to_string();
+    input.read_line(&mut line).unwrap();
+    let start: u64 = line.trim().parse().unwrap();
+    println!("{}", weird_algorithm(start));
 }
