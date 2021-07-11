@@ -65,6 +65,5 @@ fn main() {
     input.read_line(&mut line).unwrap();
     let split = line.split_whitespace();
     let array: Vec<u64> = split.map(|i| i.parse().unwrap()).collect();
-    dbg!(&array);
     println!("{}", increasing_array(n, array));
 }
