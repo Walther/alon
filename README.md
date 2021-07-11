@@ -8,3 +8,5 @@ Solutions for the course "Algoritmit Ongelmanratkaisussa" i.e. Algorithms in Pro
 This repository uses a `nightly` Rust in order to utilize `cargo bench` for [benchmarking](https://doc.rust-lang.org/nightly/unstable-book/library-features/test.html).
 
 Use `cargo test` to run all tests, use `cargo bench` to run all benchmarks.
+
+Use `cargo doc --open` to build and open the documentation.
