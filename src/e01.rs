@@ -2,7 +2,7 @@
 //! On each move, you may increase the value of any element by one. What is the minimum number of moves required?
 
 /// Returns the minimum number of "moves" required in order to make the array monotonically increasing in order, where a "move" is an operation of incrementing any single element by one.
-pub fn increasing_array(_n: usize, array: Vec<usize>) -> usize {
+pub fn increasing_array(_n: u64, array: Vec<u64>) -> u64 {
     let mut moves = 0;
     let mut iter = array.iter();
     // Start with an accumulator = array[0]
@@ -28,7 +28,6 @@ pub fn increasing_array(_n: usize, array: Vec<usize>) -> usize {
 
 mod tests {
     use super::*;
-    use test::Bencher;
 
     #[test]
     fn increasing_32517() {
@@ -36,4 +35,36 @@ mod tests {
         let expected = 5;
         assert_eq!(result, expected);
     }
+
+    #[test]
+    fn increasing_1() {
+        let result = increasing_array(1, vec![1]);
+        let expected = 0;
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn increasing_123() {
+        let result = increasing_array(3, vec![1, 2, 3]);
+        let expected = 0;
+        assert_eq!(result, expected);
+    }
+}
+
+// Hack: include a `main` function in the file. This way this file is possible to return as a standalone solution.
+#[allow(dead_code)]
+fn main() {
+    use std::io::{BufRead, BufReader};
+
+    let mut input = BufReader::new(std::io::stdin());
+    let mut line = String::new();
+    input.read_line(&mut line).unwrap();
+    let n: u64 = line.trim().parse().unwrap();
+
+    let mut line = String::new();
+    input.read_line(&mut line).unwrap();
+    let split = line.split_whitespace();
+    let array: Vec<u64> = split.map(|i| i.parse().unwrap()).collect();
+    dbg!(&array);
+    println!("{}", increasing_array(n, array));
 }
