@@ -10,4 +10,8 @@
 #![feature(test)]
 extern crate test;
 
-pub mod weird_algorithm;
+pub mod e00;
+pub mod e01;
+
+pub use e00::*;
+pub use e01::*;

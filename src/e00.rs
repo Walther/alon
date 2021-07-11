@@ -1,7 +1,19 @@
 //! Consider an algorithm that takes as input a positive integer n. If n is even, the algorithm divides it by two, and if n is odd, the algorithm multiplies it by three and adds one. The algorithm repeats this, until n is one.
 
 /// Given a positive integer, returns a string with the Collatz sequence starting from that number, space-separated.
+///
+/// # Examples
+/// ```rust
+/// # use alon::*;
+/// let result = weird_algorithm(3);
+/// let expected = "3 10 5 16 8 4 2 1";
+/// assert_eq!(result, expected);
+/// ```
 pub fn weird_algorithm(start: usize) -> String {
+    if start == 0 {
+        panic!("Expected positive integer.")
+    }
+
     if start == 1 {
         return "1".to_string();
     }
@@ -17,6 +29,12 @@ pub fn weird_algorithm(start: usize) -> String {
 mod tests {
     use super::*;
     use test::Bencher;
+
+    #[test]
+    #[should_panic]
+    fn start_0() {
+        let _result = weird_algorithm(0);
+    }
 
     #[test]
     fn start_1() {
