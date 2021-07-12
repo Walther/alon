@@ -28,6 +28,7 @@ pub fn increasing_array(_n: u64, array: Vec<u64>) -> u64 {
 
 mod tests {
     use super::*;
+    use test::Bencher;
 
     #[test]
     fn increasing_32517() {
@@ -48,6 +49,12 @@ mod tests {
         let result = increasing_array(3, vec![1, 2, 3]);
         let expected = 0;
         assert_eq!(result, expected);
+    }
+
+    #[bench]
+    fn bench_increasing_32517(b: &mut Bencher) {
+        // TODO: better benchmark
+        b.iter(|| increasing_array(5, vec![3, 2, 5, 1, 7]));
     }
 }
 
