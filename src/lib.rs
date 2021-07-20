@@ -12,6 +12,10 @@ extern crate test;
 
 pub mod e00;
 pub mod e01;
+pub mod e02;
+pub mod e03;
 
 pub use e00::*;
 pub use e01::*;
+pub use e02::*;
+pub use e03::*;

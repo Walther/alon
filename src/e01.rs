@@ -26,6 +26,7 @@ pub fn increasing_array(_n: u64, array: Vec<u64>) -> u64 {
     moves
 }
 
+#[cfg(test)]
 mod tests {
     use super::*;
     use test::Bencher;
