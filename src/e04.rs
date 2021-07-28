@@ -2,6 +2,7 @@
 
 use std::collections::BTreeSet;
 
+/// Given a string `seed`, generates all unique permutations of the letters. Note: this is most likely `O(n!)`, tested up to `seed.len() == 8`.
 pub fn creating_strings(seed: &str) -> Vec<String> {
     let letters: Vec<char> = seed.chars().collect();
     let collection = recurse_helper(letters);
