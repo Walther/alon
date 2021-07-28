@@ -6,7 +6,7 @@ pub fn creating_strings(seed: &str) -> Vec<String> {
     let letters: Vec<char> = seed.chars().collect();
     let collection = recurse_helper(letters);
 
-    let results: Vec<String> = collection.iter().map(|s| s.to_owned()).collect();
+    let results: Vec<String> = collection.into_iter().collect();
     return results;
 }
 
@@ -76,6 +76,11 @@ mod tests {
             "cabaa", "cbaaa",
         ];
         assert_eq!(result, expected);
+    }
+
+    #[bench]
+    fn bench_creating_strings_abcdefgj(b: &mut Bencher) {
+        b.iter(|| creating_strings("abcdefgj"));
     }
 }
 
