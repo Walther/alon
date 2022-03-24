@@ -8,23 +8,20 @@ pub fn creating_strings(seed: &str) -> Vec<String> {
     let collection = recurse_helper(letters);
 
     let results: Vec<String> = collection.into_iter().collect();
-    return results;
+    results
 }
 
 fn recurse_helper(letters: Vec<char>) -> BTreeSet<String> {
     let mut collection: BTreeSet<String> = BTreeSet::new();
 
-    if letters.len() == 0 {
-        // termination condition: no new letters
-        return collection;
-    } else {
+    if !letters.is_empty() {
         // recurse step: add a word for each possible recurse
         for (index, letter) in letters.iter().enumerate() {
             let mut rest = letters.clone();
             // remove the current letter from availability pool
             rest.remove(index);
             // special case: ran out of letters
-            if rest.len() == 0 {
+            if rest.is_empty() {
                 let mut last_collection: BTreeSet<String> = BTreeSet::new();
                 last_collection.insert(letter.to_string());
                 return last_collection;
@@ -37,9 +34,10 @@ fn recurse_helper(letters: Vec<char>) -> BTreeSet<String> {
                 collection.insert(word);
             }
         }
-        // return all words generated
-        return collection;
     }
+
+    // return all words generated
+    collection
 }
 
 #[cfg(test)]

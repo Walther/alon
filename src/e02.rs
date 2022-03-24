@@ -9,7 +9,7 @@ pub fn two_sets(n: u64) -> Option<(Vec<u64>, Vec<u64>)> {
         return None;
     }
 
-    let target = sum / 2;
+    let _target = sum / 2;
 
     todo!()
 }

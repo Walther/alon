@@ -9,7 +9,7 @@ pub fn increasing_array(array: Vec<u64>) -> u64 {
     let mut accumulator = iter.next().unwrap(); // FIXME: remove unwrap
 
     // Iterate through the rest of the array
-    while let Some(number) = iter.next() {
+    for number in iter {
         // If the number is equal to the accumulator, continue
         if number == accumulator {
             continue;
