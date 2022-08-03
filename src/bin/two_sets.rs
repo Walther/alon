@@ -1,5 +1,8 @@
 //! Your task is to divide the numbers 1,2,…,n into two sets of equal sum.
 
+#![feature(test)]
+extern crate test;
+
 /// Given a number `n`, returns the numbers `1..n` split into two sets with equal sum if possible, or `None` otherwise.
 pub fn two_sets(n: u64) -> Option<(Vec<u64>, Vec<u64>)> {
     // Arithmetic series sum
@@ -70,4 +73,8 @@ mod tests {
     }
 
     */
+}
+
+fn main() {
+    todo!()
 }

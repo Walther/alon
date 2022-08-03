@@ -1,6 +1,9 @@
 //! You are given an array of n integers. You want to modify the array so that it is increasing, i.e., every element is at least as large as the previous element.
 //! On each move, you may increase the value of any element by one. What is the minimum number of moves required?
 
+#![feature(test)]
+extern crate test;
+
 /// Returns the minimum number of "moves" required in order to make the array monotonically increasing in order, where a "move" is an operation of incrementing any single element by one.
 pub fn increasing_array(array: Vec<u64>) -> u64 {
     let mut moves = 0;

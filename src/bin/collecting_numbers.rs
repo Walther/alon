@@ -1,6 +1,9 @@
 //! You are given an array that contains each number between 1…n exactly once. Your task is to collect the numbers from 1 to n in increasing order.
 //! On each round, you go through the array from left to right and collect as many numbers as possible. What will be the total number of rounds?
 
+#![feature(test)]
+extern crate test;
+
 use std::collections::HashMap;
 
 /// Returns the number of rounds required to collect every number 1..n in increasing order, when reading the array from left to right, always only picking numbers in order.

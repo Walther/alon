@@ -1,5 +1,8 @@
 //! In a movie festival n movies will be shown. You know the starting and ending time of each movie. What is the maximum number of movies you can watch entirely?
 
+#![feature(test)]
+extern crate test;
+
 #[derive(PartialEq, Eq, PartialOrd, Ord, Debug)]
 pub struct Movie {
     start: u32,

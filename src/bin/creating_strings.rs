@@ -1,5 +1,8 @@
 //! Given a string, your task is to generate all different strings that can be created using its characters.
 
+#![feature(test)]
+extern crate test;
+
 use std::collections::BTreeSet;
 
 /// Given a string `seed`, generates all unique permutations of the letters. Note: this is most likely `O(n!)`, tested up to `seed.len() == 8`.
